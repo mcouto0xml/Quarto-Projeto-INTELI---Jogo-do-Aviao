@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <script src='scenes/Cena1.js'></script>
+    <script src="scenes/Cena2.js"></script>
+    <script src="scenes/Cena3.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        
+
+    const gameDimensions = {
+        width: 1280,
+        height: 740,
+    }
+        // Delimitando as constantes da largura e altura da onde nosso jogo vai ser espelhado na pagina
+        const larguraJogo = 1260;
+        const alturaJogo = 600;
+
+        // Configurando o Phaser de acordo com as constantes
+        const config = {
+            type: Phaser.AUTO,
+            width: larguraJogo,
+            height: alturaJogo,
+
+            // Ativando a física no jogo
+            physics: {
+                default: 'arcade',
+                arcade: {
+
+                    gravity: { x: - 600},
+                    debug: false
+                }
+            },
+        
+        scene: [
+            CenaP, CenaS, CenaT
+        ],
+    };
+
+    // Cria o jogo passando a variável config como atributos
+    const game = new Phaser.Game(config);
+    game.scene.start('CenaP');
+
+    </script>
+
+    
+</body>
+</html>
